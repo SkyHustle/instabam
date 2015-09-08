@@ -4,8 +4,7 @@ gem "rails", "4.2.3"
 
 gem "pg"
 
-gem "bourbon"
-gem "neat"
+gem 'bootstrap-sass', '~> 3.3.3'
 gem "sass-rails", "~> 5.0"
 gem "jquery-rails"
 
