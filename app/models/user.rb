@@ -2,10 +2,10 @@ class User < ActiveRecord::Base
   def self.find_or_create_from_auth(data)
     user = User.find_or_create_by(provider: data.provider, uid: data.uid)
 
-    user.email     = data.info.email
     user.nickname  = data.info.nickname
-    user.image_url = data.info.image
+    user.email     = data.info.email
     user.token     = data.credentials.token
+    user.image_url = data.info.image
     user.save
 
     user
