@@ -1,15 +1,44 @@
 <% if current_user %>
   <div class="container-fluid container-home">
     <div class="col-md-2"></div>
-    <div class="col-md-8">
-      <h1 class="home">You Are Authorized</h1>
+    <div class="col-md-8 user-info">
       <%= image_tag current_user.image_url, class: "img-circle img-thumbnail home-image" %>
-      <h2 class="home"> <%= current_user.nickname %> </h2>
-      <h2 class="home"> <%= current_user.email %> </h2>
+      <h6 class="home"> <%= current_user.nickname %> </h6>
+      <h6 class="home"> <%= current_user.email %> </h6>
       <%= link_to "Logout", logout_path, class: "btn btn-lg btn-default btn-home" %>
     </div>
-    <div class="col-md-2"></div>
+
+  <div class="row">
+            <div class="col-md-4 portfolio-item">
+                <a href="#">
+                    <img class="img-responsive" src="http://placehold.it/700x400" alt="">
+                </a>
+                <h3>
+                    <a href="#">Project Name</a>
+                </h3>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam viverra euismod odio, gravida pellentesque urna varius vitae.</p>
+            </div>
+            <div class="col-md-4 portfolio-item">
+                <a href="#">
+                    <img class="img-responsive" src="http://placehold.it/700x400" alt="">
+                </a>
+                <h3>
+                    <a href="#">Project Name</a>
+                </h3>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam viverra euismod odio, gravida pellentesque urna varius vitae.</p>
+            </div>
+            <div class="col-md-4 portfolio-item">
+                <a href="#">
+                    <img class="img-responsive" src="http://placehold.it/700x400" alt="">
+                </a>
+                <h3>
+                    <a href="#">Project Name</a>
+                </h3>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam viverra euismod odio, gravida pellentesque urna varius vitae.</p>
+            </div>
+        </div>
   </div>
+
 <% else %>
   <div class="container-fluid container-home-page">
     <div class="col-md-2"></div>
