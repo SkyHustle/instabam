@@ -4,14 +4,17 @@ class SessionsController < ApplicationController
 
     if user
       session[:user_id] = user.id
-      redirect_to dashboard_path
+      flash[:success]    = "Welcome"
+      redirect_to root_path
     else
+      flash[:danger]     = "Oh O, you're Not Logged IN!"
       redirect_to root_path
     end
   end
 
   def destroy
     session[:user_id] = nil
+    flash[:danger]    = "You've Logged Out!"
     redirect_to root_path
   end
 
