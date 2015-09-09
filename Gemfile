@@ -14,6 +14,7 @@ gem "sdoc", "~> 0.4.0", group: :doc
 gem "unicorn"
 gem "figaro"
 gem "omniauth-instagram"
+gem 'simplecov-badge', :require => false
 
 group :development, :test do
   gem "rspec-rails"

@@ -179,6 +179,7 @@ GEM
       docile (~> 1.1.0)
       json (~> 1.8)
       simplecov-html (~> 0.10.0)
+    simplecov-badge (2.0.2)
     simplecov-html (0.10.0)
     slop (3.6.0)
     sprockets (3.3.4)
@@ -228,6 +229,7 @@ DEPENDENCIES
   sass-rails (~> 5.0)
   sdoc (~> 0.4.0)
   simplecov
+  simplecov-badge
   uglifier (>= 1.3.0)
   unicorn
   web-console (~> 2.0)
