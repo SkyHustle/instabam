@@ -3,7 +3,7 @@ require "rails_helper"
 RSpec.describe User, type: :model do
   context "a valid user" do
     before do
-      #create user and log user in
+      login_user
     end
 
     it "has a provider" do
@@ -16,6 +16,7 @@ RSpec.describe User, type: :model do
 
     it "has a nickname" do
       expect(user.nickname).to eq "binky"
+      expect(user.nickname).to_not eq "slinky"
     end
 
     it "has an email" do
