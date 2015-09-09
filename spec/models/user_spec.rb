@@ -19,10 +19,6 @@ RSpec.describe User, type: :model do
       expect(user.nickname).to_not eq "slinky"
     end
 
-    it "has an email" do
-      expect(user.email).to eq "binky@email.com"
-    end
-
     it "has an image" do
       expect(user.image_url).to eq "https://pbs.twimg.com/profile_images/589490282888060929/zkxLsGbY.jpg"
     end
