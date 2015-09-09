@@ -5,7 +5,7 @@ class SessionsController < ApplicationController
     if user
       session[:user_id]  = user.id
       flash[:success]    = "Welcome!"
-      redirect_to root_path
+      redirect_to feed_path
     else
       flash[:danger]     = "Oh O, you're Not Logged IN!"
       redirect_to root_path

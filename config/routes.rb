@@ -3,4 +3,5 @@ Rails.application.routes.draw do
   get "/logout", to: "sessions#destroy"
 
   root "home#show"
+  get "/feed", to: "feed#show"
 end
