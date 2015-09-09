@@ -3,7 +3,7 @@ class SessionsController < ApplicationController
     user = User.find_or_create_from_auth(oauth_data)
 
     if user
-      session[:user_id] = user.id
+      session[:user_id]  = user.id
       flash[:success]    = "Welcome"
       redirect_to root_path
     else
