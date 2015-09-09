@@ -17,6 +17,9 @@ gem "omniauth-instagram"
 
 group :development, :test do
   gem "rspec-rails"
+  gem "capybara"
+  gem "simplecov"
+  gem "launchy"
   gem "better_errors"
   gem "binding_of_caller"
   gem "pry"

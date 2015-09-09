@@ -1,3 +1,6 @@
+require "simplecov"
+SimpleCov.start
+
 RSpec.configure do |config|
   config.expect_with :rspec do |expectations|
     expectations.include_chain_clauses_in_custom_matcher_descriptions = true
@@ -9,7 +12,6 @@ RSpec.configure do |config|
 
   def user
     @user ||= User.create(nickname: "binky",
-                          email: "binky@email.com",
                           provider: "instagram",
                           token: "abcdefghij",
                           uid: "987654",
@@ -19,13 +21,11 @@ RSpec.configure do |config|
   def login_user
     OmniAuth.config.test_mode = true
 
-    OmniAuth.config.mock_auth[:instagram] = {
-      "provider"  => user.provider,
-      "uid"       => user.uid,
-      "nickname"  => user.nickname,
-      "email"     => user.email,
-      "token"     => user.token,
-      "image_url" =>user.image_url
-    }
+    OmniAuth.config.mock_auth[:instagram] = OmniAuth::AuthHash.new({
+      "provider"    => user.provider,
+      "uid"         => user.uid,
+      "info"        => {nickname: user.nickname, image_url: user.image_url},
+      "credentials" => {token: user.token}
+    })
   end
 end
