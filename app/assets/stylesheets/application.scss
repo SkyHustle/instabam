@@ -72,9 +72,12 @@ img.img-circle.img-thumbnail.home-image {
 }
 
 .alert {
-  text-align: center;
-  // position: absolute;
   z-index: 2;
+  text-align: center;
+  position: absolute;
+  width: 40%;
+  left: 60%;
+  font-size: 1.5em;
 }
 
 @media (min-width: 992px) {
