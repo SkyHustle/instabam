@@ -1,0 +1,20 @@
+<div class="container-fluid container-home">
+    <div class="col-md-2"></div>
+    <div class="col-md-8 user-info">
+      <%= image_tag current_user.image_url, class: "img-circle img-thumbnail home-image" %>
+      <h6 class="home"> <%= current_user.nickname %> </h6>
+      <h6 class="home"> <%= current_user.email %> </h6>
+      <%= link_to "Logout", logout_path, class: "btn btn-lg btn-default btn-home" %>
+    </div>
+
+<% @feed_posts.each do |post| %>
+  <div class="col-md-4 portfolio-item">
+    <a href="#">
+      <%= image_tag post["images"]["standard_resolution"]["url"], class: "img-responsive" %>
+    </a>
+    <h3>
+        <a href="#">Title</a>
+    </h3>
+    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam viverra euismod odio, gravida pellentesque urna varius vitae.</p>
+  </div>
+<% end %>

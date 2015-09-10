@@ -15,6 +15,7 @@ gem "unicorn"
 gem "figaro"
 gem "omniauth-instagram"
 gem "hurley"
+gem "awesome_print"
 
 group :development, :test do
   gem "rspec-rails"
