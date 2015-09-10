@@ -9,8 +9,8 @@
 
 <% @feed_posts.each do |post| %>
   <div class="col-md-4 portfolio-item">
-    <%= image_tag post["images"]["standard_resolution"]["url"], class: "img-responsive" %>
-    <%= image_tag post["user"]["profile_picture"], class: "img-responsive" %>
+    <%= image_tag post.images[:standard_resolution][:url], class: "img-responsive" %>
+    <%= image_tag post[:user][:profile_picture], class: "img-responsive" %>
     <h3>
         <a href="#">Title</a>
     </h3>
