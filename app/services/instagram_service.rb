@@ -3,7 +3,6 @@ class InstagramService
 
   def initialize
     @connection = Hurley::Client.new("https://api.instagram.com/v1")
-    # connection.query[:apikey] = ENV["ig_user_token"]
   end
 
   def feed_posts(token)
@@ -11,8 +10,6 @@ class InstagramService
   end
 
   def post(id)
-    # JSON.parse(connection.get("schools/#{id}").body)
-    # turns JSON object to ruby hash
     parse(connection.get("posts/#{id}"))
   end
 

@@ -21,7 +21,7 @@ RSpec.configure do |config|
   def user
     @user ||= User.create(nickname: "binky",
                           provider: "instagram",
-                          token: "abcdefghij",
+                          token: Figaro.env.ig_user_token,
                           uid: "987654",
                           image_url: "https://pbs.twimg.com/profile_images/589490282888060929/zkxLsGbY.jpg")
   end
