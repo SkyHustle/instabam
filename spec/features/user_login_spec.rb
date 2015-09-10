@@ -2,7 +2,7 @@ require "rails_helper"
 
 RSpec.feature "User", type: :feature do
   scenario "can successfully login" do
-  VCR.use_cassette('instagram_service_test#feed') do
+  VCR.use_cassette('user_login_test#login') do
     visit root_path
 
     login_user
