@@ -6,10 +6,7 @@ class InstagramService
   end
 
   def feed_posts(token)
-    # JSON.parse(connection.get("schools").body)
-    # send get request to http://localhost:3000/v1/schools
     parse(connection.get("users/self/feed?access_token=#{token}"))
-    # https://api.instagram.com/v1/users/self/feed?access_token=ACCESS-TOKEN
   end
 
   def post(id)
