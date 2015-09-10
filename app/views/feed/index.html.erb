@@ -10,10 +10,18 @@
 <% @feed_posts.each do |post| %>
   <div class="col-md-4 portfolio-item">
     <%= image_tag post.images[:standard_resolution][:url], class: "img-responsive" %>
-    <%= image_tag post[:user][:profile_picture], class: "img-responsive" %>
-    <h3>
-        <a href="#">Title</a>
-    </h3>
-    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam viverra euismod odio, gravida pellentesque urna varius vitae.</p>
+    <%= image_tag post[:user][:profile_picture], class: "user img-responsive" %>
+    <%= post[:likes][:count] %>
+
+    <%= link_to post[:user][:username], "" %>
+
+
+      <% post[:comments][:data].each do |comment| %>
+        <p>
+          <%= link_to comment[:from][:username], "" %>
+          <%= comment[:text] %>
+        </p>
+      <% end %>
+
   </div>
 <% end %>
