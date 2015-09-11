@@ -31,7 +31,7 @@
 }
 
 .container-home {
-  padding-top: 3vh;
+  padding-top: 1vh;
   text-align: center;
 }
 
@@ -72,7 +72,13 @@ a.btn.btn-lg.btn-default.btn-home.logout {
 }
 
 img.img-circle.img-thumbnail.home-image {
-  height: 100px;
+  height: 150px;
+  border: 1.5px solid orange;
+  transition: all .2s ease-in-out;
+}
+
+img.img-circle.img-thumbnail.home-image:hover {
+  transform: scale(1.1);
 }
 
 .greeting-box {
