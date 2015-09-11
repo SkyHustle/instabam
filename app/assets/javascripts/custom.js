@@ -1,5 +1,5 @@
 $(document).ready(function(){
-  $(".alert").fadeOut(6000);
+  $(".alert").fadeOut(7000);
 
   /* card flip */
   $(".flip").hover(function(){

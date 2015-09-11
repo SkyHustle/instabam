@@ -16,6 +16,15 @@ RSpec.feature "User", type: :feature do
     end
   end
 
+  scenario "cannot visit feed page without logging in" do
+    visit root_path
+
+    visit feed_path
+
+    expect(current_path).to_not eq(feed_path)
+    expect(current_path).to eq(root_path)
+  end
+
   xscenario "cannot login with invalid credentials" do
     visit root_path
 
