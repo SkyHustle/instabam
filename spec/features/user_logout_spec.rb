@@ -10,17 +10,13 @@ RSpec.feature "User", type: :feature do
       click_link("Login")
 
       expect(page).to_not have_link("Login")
-
       expect(page).to have_link("Logout")
-      expect(page).to have_content("binky")
+
+      click_link("Logout")
+
+      expect(page).to_not have_link("Logout")
+      expect(page).to have_link("Login")
+      expect(current_path).to eq(root_path)
     end
-  end
-
-  xscenario "cannot login with invalid credentials" do
-    visit root_path
-
-    click_link("Login")
-
-    expect(current_path).to eq(root_path)
   end
 end

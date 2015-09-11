@@ -11,6 +11,10 @@ RSpec.describe User, type: :model do
       expect(post.keys.include?(:user)).to eq(true)
       expect(post.keys.include?(:comments)).to eq(true)
       expect(post.keys.include?(:tags)).to eq(true)
+
+      expect(post[:type]).to eq("image")
+      expect(post[:comments][:count]).to eq(2)
+      expect(post[:likes][:count]).to eq(92)
     end
   end
 end

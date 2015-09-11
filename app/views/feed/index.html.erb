@@ -1,27 +1,27 @@
 <div class="container-fluid container-home">
-    <div class="col-md-2"></div>
-    <div class="col-md-8 user-info">
-      <%= image_tag current_user.image_url, class: "img-circle img-thumbnail home-image" %>
-      <h6 class="home"> <%= current_user.nickname %> </h6>
-      <h6 class="home"> <%= current_user.email %> </h6>
-      <%= link_to "Logout", logout_path, class: "btn btn-lg btn-default btn-home" %>
-    </div>
 
-<% @feed_posts.each do |post| %>
-  <div class="col-md-4 portfolio-item">
-    <%= image_tag post.images[:standard_resolution][:url], class: "img-responsive" %>
-    <%= image_tag post[:user][:profile_picture], class: "user img-responsive" %>
-    <%= post[:likes][:count] %>
-
-    <%= link_to post[:user][:username], "" %>
-
-
-      <% post[:comments][:data].each do |comment| %>
-        <p>
-          <%= link_to comment[:from][:username], "" %>
-          <%= comment[:text] %>
-        </p>
-      <% end %>
-
+  <div class="col-md-12 user-info">
+    <%= image_tag current_user.image_url, class: "img-circle img-thumbnail home-image" %>
+    <h6 class="home"> <%= current_user.nickname %> </h6>
+    <h6 class="home"> <%= current_user.email %> </h6>
+    <%= link_to "Logout", logout_path, class: "btn btn-lg btn-default btn-home" %>
   </div>
-<% end %>
+
+  <% @posts.each do |post| %>
+    <div class="col-md-4 portfolio-item">
+      <%= image_tag post.image_url, class: "img-responsive" %>
+      <%= post.liked_count %>
+      <%= image_tag post.profile_picture, class: "user img-responsive" %>
+
+      <%= link_to post.username, "" %>
+
+        <% post.picture_comments.each do |comment| %>
+          <p>
+            <%= link_to comment[:from][:username], "" %>
+            <%= comment[:text] %>
+          </p>
+        <% end %>
+
+    </div>
+  <% end %>
+</div>
