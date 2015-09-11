@@ -9,10 +9,6 @@ class InstagramService
     parse(connection.get("users/self/feed?access_token=#{token}"))[:data]
   end
 
-  def post(id)
-    parse(connection.get("posts/#{id}"))
-  end
-
   private
 
   def parse(response)

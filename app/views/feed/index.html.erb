@@ -1,27 +1,36 @@
 <div class="container-fluid container-home">
-
   <div class="col-md-12 user-info">
     <%= image_tag current_user.image_url, class: "img-circle img-thumbnail home-image" %>
     <h6 class="home"> <%= current_user.nickname %> </h6>
     <h6 class="home"> <%= current_user.email %> </h6>
-    <%= link_to "Logout", logout_path, class: "btn btn-lg btn-default btn-home" %>
+    <%= link_to "Logout", logout_path, class: "btn btn-lg btn-default btn-home logout" %>
   </div>
-
-  <% @posts.each do |post| %>
-    <div class="col-md-4 portfolio-item">
-      <%= image_tag post.image_url, class: "img-responsive" %>
-      <%= post.liked_count %>
-      <%= image_tag post.profile_picture, class: "user img-responsive" %>
-
-      <%= link_to post.username, "" %>
-
-        <% post.picture_comments.each do |comment| %>
-          <p>
-            <%= link_to comment[:from][:username], "" %>
-            <%= comment[:text] %>
-          </p>
-        <% end %>
-
-    </div>
-  <% end %>
 </div>
+
+
+
+    <% @posts.each do |post| %>
+      <div class="col-sm-4">
+        <div class="flip">
+            <div class="card">
+              <div class="face front">
+                <%= image_tag post.image_url, size: "400x400" %>
+
+              </div>
+              <div class="face back">
+                <%= image_tag post.profile_picture, class: "user_image" %>
+                <%= link_to post.username, "#", disabled: "disabled" %><br>
+                <%= post.liked_count %>&nbsp;Likes
+
+                <h5><b><u>Comments</u><b></h5>
+                <% post.picture_comments.each do |comment| %>
+                  <p>
+                    <%= link_to comment[:from][:username], "#" %>
+                    <%= comment[:text] %>
+                  </p>
+                <% end %>
+              </div>
+            </div>
+        </div>
+      </div>
+    <% end %>
