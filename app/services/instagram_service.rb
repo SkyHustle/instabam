@@ -12,6 +12,7 @@ class InstagramService
   private
 
   def parse(response)
+    # comment
     JSON.parse(response.body, symbolize_names: true)
   end
 end
